@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Michael Eshak]'s Website</title>
+    <title>Michael Eshak's Website</title>
     <style>
       /* SpongeBob Yellow Wallpaper Background */
       body { 
@@ -39,7 +39,7 @@
       h2   { color: #2E75B6; border-bottom: 2px solid #2E75B6; }
       p    { line-height: 1.6; }
 
-      /* --- FLYING & BACKFLIPPING MONKEY BACKGROUND EFFECT --- */
+      /* --- FLYING & BACKFLIPPING SPONGEBOB BACKGROUND EFFECT --- */
       .background-scene {
         position: fixed;
         top: 0;
@@ -47,100 +47,44 @@
         width: 100vw;
         height: 100vh;
         z-index: 1;
-        pointer-events: none; /* Stops the monkey from blocking clicks */
+        pointer-events: none; /* Stops the background elements from blocking clicks */
       }
 
-      /* Container handles flying across the screen from left to right */
-      .monkey-flyer {
+      /* Container handles moving SpongeBob across the screen from left to right */
+      .spongebob-flyer {
         position: absolute;
-        top: 15%; /* Height of flight path */
-        left: -150px; /* Starts completely off-screen to the left */
-        width: 120px;
-        height: 120px;
-        animation: flyAcross 8s infinite linear;
+        top: 10%; /* Height of flight path */
+        left: -200px; /* Starts completely off-screen to the left */
+        width: 150px;
+        height: 150px;
+        animation: flyAcross 9s infinite linear;
       }
 
-      /* Inner container handles the rapid backflips */
-      .monkey-flipper {
+      /* Inner container adds a continuous backflip rotation wheel on top of the GIF animation */
+      .spongebob-flipper {
         width: 100%;
         height: 100%;
-        animation: backflip 1.5s infinite linear; 
+        animation: backflip 2s infinite linear; 
       }
 
-      /* The visual monkey body shape */
-      .css-monkey {
-        position: relative;
-        width: 60px;
-        height: 50px;
-        background: #8B4513; /* Brown body */
-        border-radius: 50% 50% 40% 40%;
-        margin: 35px auto;
-      }
-
-      /* Monkey Face */
-      .css-monkey::before {
-        content: '';
-        position: absolute;
-        top: 10px;
-        left: 8px;
-        width: 44px;
-        height: 35px;
-        background: #FFD39B; /* Tan face */
-        border-radius: 50%;
-      }
-
-      /* Monkey Eyes */
-      .css-monkey::after {
-        content: '👀';
-        position: absolute;
-        top: 12px;
-        left: 16px;
-        font-size: 16px;
-      }
-
-      /* Left and Right Ears */
-      .ear {
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        background: #8B4513;
-        border-radius: 50%;
-        top: 12px;
-      }
-      .ear.left { left: -10px; }
-      .ear.right { right: -10px; }
-
-      /* Wings */
-      .wing {
-        position: absolute;
-        top: -5px;
-        width: 50px;
-        height: 30px;
-        background: #E0EEEE; /* Feather color */
-        opacity: 0.85;
-      }
-      .wing.left {
-        left: -40px;
-        transform: rotate(-30deg);
-        border-radius: 50% 50% 10% 50%;
-      }
-      .wing.right {
-        right: -40px;
-        transform: rotate(30deg);
-        border-radius: 50% 50% 50% 10%;
+      /* The Image frame itself holding the animated web GIF */
+      .spongebob-gif {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
       }
 
       /* Flight Path Animation */
       @keyframes flyAcross {
         0% {
-          left: -150px; 
+          left: -200px; 
         }
         100% {
           left: 100vw; 
         }
       }
 
-      /* Rapid Backflip Animation */
+      /* Rapid Backflip Animation (Spinning backwards counter-clockwise) */
       @keyframes backflip {
         0% {
           transform: rotate(0deg);
@@ -155,29 +99,26 @@
 
     <!-- Animated Background Layer -->
     <div class="background-scene">
-      <div class="monkey-flyer">
-        <div class="monkey-flipper">
-          <div class="ear left"></div>
-          <div class="ear right"></div>
-          <div class="wing left"></div>
-          <div class="wing right"></div>
-          <div class="css-monkey"></div>
+      <div class="spongebob-flyer">
+        <div class="spongebob-flipper">
+          <!-- Embedded Transparent Flipping SpongeBob GIF -->
+          <img class="spongebob-gif" src="https://giphy.com" alt="SpongeBob Backflip">
         </div>
       </div>
     </div>
 
     <!-- Main Webpage Content -->
     <div class="content-wrapper">
-      <h1>Hi, I'm [Michael Eshak]!</h1>
+      <h1>Hi, I'm Michael Eshak!</h1>
    
       <h2>About Me</h2>
-      <p>[Im interested in history/social studies and have interest in joining the military when i finish college.]</p>
+      <p>I'm interested in history/social studies and have interest in joining the military when I finish college.</p>
    
       <h2>My Interests</h2>
-      <p>[I enjoy to play soccer and hang out with my friends, depending on what day it is , i also like to stay home and play video games]</p>
+      <p>I enjoy to play soccer and hang out with my friends. Depending on what day it is, I also like to stay home and play video games.</p>
    
       <h2>My Goals for This Course</h2>
-      <p>[I want to build a website that allows college graduates with a degree to enter their qualifations into a small box and be given a list of jobs or possible future careers to apply for.]</p>
+      <p>I want to build a website that allows college graduates with a degree to enter their qualifications into a small box and be given a list of jobs or possible future careers to apply for.</p>
    
       <h2>My GitHub</h2>
       <p>Check out my projects: 
@@ -187,3 +128,4 @@
 
   </body>
 </html>
+ 
