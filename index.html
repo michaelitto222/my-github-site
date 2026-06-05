@@ -5,28 +5,161 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[Your Name]'s Website</title>
     <style>
-      body { font-family: Arial, sans-serif; max-width: 800px;
-             margin: 0 auto; padding: 20px; background: #f5f5f5; }
+      /* Purple wallpaper background */
+      body { 
+        font-family: Arial, sans-serif; 
+        max-width: 800px;
+        margin: 0 auto; 
+        padding: 20px; 
+        background-color: #3D1E6D; /* Deep purple background */
+        position: relative;
+        overflow-x: hidden;
+        min-height: 100vh;
+      }
+      
+      /* Content Container to keep text visible above the background */
+      .content-wrapper {
+        position: relative;
+        z-index: 2;
+        background: rgba(255, 255, 255, 0.92); /* Semi-transparent white card */
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        margin-top: 40px;
+      }
+      
       h1   { color: #1F4E79; }
       h2   { color: #2E75B6; border-bottom: 2px solid #2E75B6; }
       p    { line-height: 1.6; }
+
+      /* --- FLYING BACKFLIPPING MONKEY BACKGROUND EFFECT --- */
+      .background-scene {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+        pointer-events: none; /* Stops the monkey from blocking clicks */
+        overflow: hidden;
+      }
+
+      /* Container handles the backflip rotation */
+      .monkey-flipper {
+        position: absolute;
+        top: 15%;
+        left: 10%;
+        width: 120px;
+        height: 120px;
+        animation: backflip 2.5s infinite linear;
+      }
+
+      /* The actual visual monkey made with CSS shapes */
+      .css-monkey {
+        position: relative;
+        width: 60px;
+        height: 50px;
+        background: #8B4513; /* Brown body */
+        border-radius: 50% 50% 40% 40%;
+        margin: 30px auto;
+      }
+
+      /* Monkey Face */
+      .css-monkey::before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 8px;
+        width: 44px;
+        height: 35px;
+        background: #FFD39B; /* Tan face */
+        border-radius: 50%;
+      }
+
+      /* Monkey Eyes */
+      .css-monkey::after {
+        content: '👀';
+        position: absolute;
+        top: 12px;
+        left: 16px;
+        font-size: 16px;
+      }
+
+      /* Left and Right Ears */
+      .ear {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: #8B4513;
+        border-radius: 50%;
+        top: 12px;
+      }
+      .ear.left { left: -10px; }
+      .ear.right { right: -10px; }
+
+      /* Wings built with CSS borders */
+      .wing {
+        position: absolute;
+        top: -5px;
+        width: 50px;
+        height: 30px;
+        background: #E0EEEE; /* Feather white/light blue color */
+        border-radius: 200px 200px 0 0;
+        opacity: 0.85;
+      }
+      .wing.left {
+        left: -40px;
+        transform: rotate(-30px);
+        border-radius: 50% 50% 10% 50%;
+      }
+      .wing.right {
+        right: -40px;
+        transform: rotate(30px);
+        border-radius: 50% 50% 50% 10%;
+      }
+
+      /* Infinite Loop Backflip Animation */
+      @keyframes backflip {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(-360deg); /* Negative degrees handles backward rotation */
+        }
+      }
     </style>
   </head>
   <body>
-    <h1>Hi, I'm [Your Name]!</h1>
- 
-    <h2>About Me</h2>
-    <p>[Write 2-3 sentences about yourself here.]</p>
- 
-    <h2>My Interests</h2>
-    <p>[What do you enjoy? List a few things.]</p>
- 
-    <h2>My Goals for This Course</h2>
-    <p>[What do you want to build or learn?]</p>
- 
-    <h2>My GitHub</h2>
-    <p>Check out my projects: 
-      <a href="https://github.com/[your-username]">[Your Username]</a>
-    </p>
+
+    <!-- Animated Background Layer -->
+    <div class="background-scene">
+      <div class="monkey-flipper">
+        <div class="ear left"></div>
+        <div class="ear right"></div>
+        <div class="wing left"></div>
+        <div class="wing right"></div>
+        <div class="css-monkey"></div>
+      </div>
+    </div>
+
+    <!-- Main Webpage Content -->
+    <div class="content-wrapper">
+      <h1>Hi, I'm [Your Name]!</h1>
+   
+      <h2>About Me</h2>
+      <p>[Write 2-3 sentences about yourself here.]</p>
+   
+      <h2>My Interests</h2>
+      <p>[What do you enjoy? List a few things.]</p>
+   
+      <h2>My Goals for This Course</h2>
+      <p>[What do you want to build or learn?]</p>
+   
+      <h2>My GitHub</h2>
+      <p>Check out my projects: 
+        <a href="https://github.com/[your-username]" target="_blank">[Your Username]</a>
+      </p>
+    </div>
+
   </body>
 </html>
