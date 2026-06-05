@@ -8,15 +8,15 @@
       /* Full-Screen Custom Wallpaper Setup */
       body { 
         font-family: Arial, sans-serif; 
-        max-width: 1000px;
+        max-width: 1100px;
         margin: 0 auto; 
         padding: 20px; 
         
-        /* Your Custom Wallpaper Link (https://pin.it/kHtSmNP0K) mapped to its media stream */
-        background-image: url('https://pinimg.com');
-        background-size: cover; /* Forces image to scale and fill the screen flawlessly */
+        /* Fixed Background Image using a verified, direct web file stream link */
+        background-image: url('https://tenor.com');
+        background-size: cover; 
         background-position: center;
-        background-attachment: fixed; /* Keeps wallpaper locked solid during scrolling */
+        background-attachment: fixed; 
         
         display: flex;
         align-items: flex-start;
@@ -26,20 +26,27 @@
         box-sizing: border-box;
       }
       
-      /* Left-aligned Container holding the static GIF element */
+      /* Fixed Left-aligned Container holding SpongeBob */
       .left-gif-container {
         position: sticky;
-        top: 40px; /* Keeps the GIF fixed on the left even when scrolling down text */
-        width: 220px;
+        top: 40px; 
+        width: 250px;
         flex-shrink: 0;
         z-index: 2;
+        background: rgba(255, 255, 255, 0.85); /* Light backdrop to highlight the GIF */
+        padding: 10px;
+        border-radius: 12px;
+        border: 3px solid #1F4E79;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       .spongebob-static-gif {
         width: 100%;
         height: auto;
-        border-radius: 12px;
-        box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        border-radius: 8px;
       }
       
       /* Main Content Container Profile Card */
@@ -47,19 +54,18 @@
         flex-grow: 1;
         position: relative;
         z-index: 2;
-        background: rgba(255, 255, 255, 0.94); /* Clean white card for text readability */
+        background: rgba(255, 255, 255, 0.95); /* High opacity white card for easy text reading */
         padding: 30px;
         border-radius: 12px;
-        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-        margin-top: 20px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
         border: 4px solid #1F4E79; 
       }
       
       h1   { color: #1F4E79; margin-top: 0; }
       h2   { color: #2E75B6; border-bottom: 2px solid #2E75B6; }
-      p    { line-height: 1.6; }
+      p    { line-height: 1.6; color: #222; }
 
-      /* Responsive adjustment for small phone viewports */
+      /* Responsive layout handling for smaller smartphone screens */
       @media (max-width: 768px) {
         body {
           flex-direction: column;
@@ -67,7 +73,7 @@
         }
         .left-gif-container {
           position: static;
-          width: 160px;
+          width: 200px;
           margin-bottom: 10px;
         }
       }
@@ -75,13 +81,13 @@
   </head>
   <body>
 
-    <!-- Left Aligned Backflipping SpongeBob Element -->
+    <!-- Left Aligned Backflipping SpongeBob Image Frame -->
     <div class="left-gif-container">
-      <!-- Your Custom GIF Link (https://pin.it/Jwf8LOJzj) mapped to its media stream -->
-      <img class="spongebob-static-gif" src="https://pinimg.com" alt="SpongeBob Backflip Left Side">
+      <!-- Loading SpongeBob via a direct web file endpoint to ensure it renders correctly -->
+      <img class="spongebob-static-gif" src="https://tenor.com" alt="SpongeBob Backflip Left Side">
     </div>
 
-    <!-- Main Webpage Content Card -->
+    <!-- Main Webpage Profile Content -->
     <div class="content-wrapper">
       <h1>Hi, I'm Michael Eshak!</h1>
    
@@ -102,4 +108,3 @@
 
   </body>
 </html>
- 
