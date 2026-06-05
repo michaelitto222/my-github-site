@@ -5,109 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michael Eshak's Website</title>
     <style>
-      /* SpongeBob Yellow Wallpaper Background */
+      /* Full-Screen Custom Wallpaper Setup */
       body { 
         font-family: Arial, sans-serif; 
-        max-width: 800px;
+        max-width: 1000px;
         margin: 0 auto; 
         padding: 20px; 
-        background-color: #FFF024; /* Classic SpongeBob Yellow */
-        /* Creates the porous sponge spots using CSS gradients */
-        background-image: 
-          radial-gradient(circle, #E1CE00 15%, transparent 16%),
-          radial-gradient(circle, #E1CE00 20%, transparent 21%);
-        background-size: 120px 120px;
-        background-position: 0 0, 60px 60px;
-        position: relative;
-        overflow: hidden; /* Prevents scrollbars during flight */
+        
+        /* Your Custom Wallpaper Link (https://pin.it/kHtSmNP0K) mapped to its media stream */
+        background-image: url('https://pinimg.com');
+        background-size: cover; /* Forces image to scale and fill the screen flawlessly */
+        background-position: center;
+        background-attachment: fixed; /* Keeps wallpaper locked solid during scrolling */
+        
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 30px;
         min-height: 100vh;
+        box-sizing: border-box;
       }
       
-      /* Content Container to keep text visible above the bright background */
+      /* Left-aligned Container holding the static GIF element */
+      .left-gif-container {
+        position: sticky;
+        top: 40px; /* Keeps the GIF fixed on the left even when scrolling down text */
+        width: 220px;
+        flex-shrink: 0;
+        z-index: 2;
+      }
+
+      .spongebob-static-gif {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      }
+      
+      /* Main Content Container Profile Card */
       .content-wrapper {
+        flex-grow: 1;
         position: relative;
         z-index: 2;
-        background: rgba(255, 255, 255, 0.94); /* Clean white card */
+        background: rgba(255, 255, 255, 0.94); /* Clean white card for text readability */
         padding: 30px;
         border-radius: 12px;
         box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-        margin-top: 40px;
-        border: 4px solid #1F4E79; /* Matching border for structural pop */
+        margin-top: 20px;
+        border: 4px solid #1F4E79; 
       }
       
-      h1   { color: #1F4E79; }
+      h1   { color: #1F4E79; margin-top: 0; }
       h2   { color: #2E75B6; border-bottom: 2px solid #2E75B6; }
       p    { line-height: 1.6; }
 
-      /* --- FLYING & BACKFLIPPING SPONGEBOB BACKGROUND EFFECT --- */
-      .background-scene {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: 1;
-        pointer-events: none; /* Stops the background elements from blocking clicks */
-      }
-
-      /* Container handles moving SpongeBob across the screen from left to right */
-      .spongebob-flyer {
-        position: absolute;
-        top: 10%; /* Height of flight path */
-        left: -200px; /* Starts completely off-screen to the left */
-        width: 150px;
-        height: 150px;
-        animation: flyAcross 9s infinite linear;
-      }
-
-      /* Inner container adds a continuous backflip rotation wheel on top of the GIF animation */
-      .spongebob-flipper {
-        width: 100%;
-        height: 100%;
-        animation: backflip 2s infinite linear; 
-      }
-
-      /* The Image frame itself holding the animated web GIF */
-      .spongebob-gif {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-
-      /* Flight Path Animation */
-      @keyframes flyAcross {
-        0% {
-          left: -200px; 
+      /* Responsive adjustment for small phone viewports */
+      @media (max-width: 768px) {
+        body {
+          flex-direction: column;
+          align-items: center;
         }
-        100% {
-          left: 100vw; 
-        }
-      }
-
-      /* Rapid Backflip Animation (Spinning backwards counter-clockwise) */
-      @keyframes backflip {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(-360deg); 
+        .left-gif-container {
+          position: static;
+          width: 160px;
+          margin-bottom: 10px;
         }
       }
     </style>
   </head>
   <body>
 
-    <!-- Animated Background Layer -->
-    <div class="background-scene">
-      <div class="spongebob-flyer">
-        <div class="spongebob-flipper">
-          <!-- Embedded Transparent Flipping SpongeBob GIF -->
-          <img class="spongebob-gif" src="https://giphy.com" alt="SpongeBob Backflip">
-        </div>
-      </div>
+    <!-- Left Aligned Backflipping SpongeBob Element -->
+    <div class="left-gif-container">
+      <!-- Your Custom GIF Link (https://pin.it/Jwf8LOJzj) mapped to its media stream -->
+      <img class="spongebob-static-gif" src="https://pinimg.com" alt="SpongeBob Backflip Left Side">
     </div>
 
-    <!-- Main Webpage Content -->
+    <!-- Main Webpage Content Card -->
     <div class="content-wrapper">
       <h1>Hi, I'm Michael Eshak!</h1>
    
