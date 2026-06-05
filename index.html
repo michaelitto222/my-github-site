@@ -5,34 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[Your Name]'s Website</title>
     <style>
-      /* Purple wallpaper background */
+      /* SpongeBob Yellow Wallpaper Background */
       body { 
         font-family: Arial, sans-serif; 
         max-width: 800px;
         margin: 0 auto; 
         padding: 20px; 
-        background-color: #3D1E6D; /* Deep purple background */
+        background-color: #FFF024; /* Classic SpongeBob Yellow */
+        /* Creates the porous sponge spots using CSS gradients */
+        background-image: 
+          radial-gradient(circle, #E1CE00 15%, transparent 16%),
+          radial-gradient(circle, #E1CE00 20%, transparent 21%);
+        background-size: 120px 120px;
+        background-position: 0 0, 60px 60px;
         position: relative;
-        overflow-x: hidden;
+        overflow: hidden; /* Prevents scrollbars during flight */
         min-height: 100vh;
       }
       
-      /* Content Container to keep text visible above the background */
+      /* Content Container to keep text visible above the bright background */
       .content-wrapper {
         position: relative;
         z-index: 2;
-        background: rgba(255, 255, 255, 0.92); /* Semi-transparent white card */
+        background: rgba(255, 255, 255, 0.94); /* Clean white card */
         padding: 30px;
         border-radius: 12px;
-        box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
         margin-top: 40px;
+        border: 4px solid #1F4E79; /* Matching border for structural pop */
       }
       
       h1   { color: #1F4E79; }
       h2   { color: #2E75B6; border-bottom: 2px solid #2E75B6; }
       p    { line-height: 1.6; }
 
-      /* --- FLYING BACKFLIPPING MONKEY BACKGROUND EFFECT --- */
+      /* --- FLYING & BACKFLIPPING MONKEY BACKGROUND EFFECT --- */
       .background-scene {
         position: fixed;
         top: 0;
@@ -41,27 +48,33 @@
         height: 100vh;
         z-index: 1;
         pointer-events: none; /* Stops the monkey from blocking clicks */
-        overflow: hidden;
       }
 
-      /* Container handles the backflip rotation */
-      .monkey-flipper {
+      /* Container handles flying across the screen from left to right */
+      .monkey-flyer {
         position: absolute;
-        top: 15%;
-        left: 10%;
+        top: 15%; /* Height of flight path */
+        left: -150px; /* Starts completely off-screen to the left */
         width: 120px;
         height: 120px;
-        animation: backflip 2.5s infinite linear;
+        animation: flyAcross 8s infinite linear;
       }
 
-      /* The actual visual monkey made with CSS shapes */
+      /* Inner container handles the rapid backflips */
+      .monkey-flipper {
+        width: 100%;
+        height: 100%;
+        animation: backflip 1.5s infinite linear; 
+      }
+
+      /* The visual monkey body shape */
       .css-monkey {
         position: relative;
         width: 60px;
         height: 50px;
         background: #8B4513; /* Brown body */
         border-radius: 50% 50% 40% 40%;
-        margin: 30px auto;
+        margin: 35px auto;
       }
 
       /* Monkey Face */
@@ -97,34 +110,43 @@
       .ear.left { left: -10px; }
       .ear.right { right: -10px; }
 
-      /* Wings built with CSS borders */
+      /* Wings */
       .wing {
         position: absolute;
         top: -5px;
         width: 50px;
         height: 30px;
-        background: #E0EEEE; /* Feather white/light blue color */
-        border-radius: 200px 200px 0 0;
+        background: #E0EEEE; /* Feather color */
         opacity: 0.85;
       }
       .wing.left {
         left: -40px;
-        transform: rotate(-30px);
+        transform: rotate(-30deg);
         border-radius: 50% 50% 10% 50%;
       }
       .wing.right {
         right: -40px;
-        transform: rotate(30px);
+        transform: rotate(30deg);
         border-radius: 50% 50% 50% 10%;
       }
 
-      /* Infinite Loop Backflip Animation */
+      /* Flight Path Animation */
+      @keyframes flyAcross {
+        0% {
+          left: -150px; 
+        }
+        100% {
+          left: 100vw; 
+        }
+      }
+
+      /* Rapid Backflip Animation */
       @keyframes backflip {
         0% {
           transform: rotate(0deg);
         }
         100% {
-          transform: rotate(-360deg); /* Negative degrees handles backward rotation */
+          transform: rotate(-360deg); 
         }
       }
     </style>
@@ -133,12 +155,14 @@
 
     <!-- Animated Background Layer -->
     <div class="background-scene">
-      <div class="monkey-flipper">
-        <div class="ear left"></div>
-        <div class="ear right"></div>
-        <div class="wing left"></div>
-        <div class="wing right"></div>
-        <div class="css-monkey"></div>
+      <div class="monkey-flyer">
+        <div class="monkey-flipper">
+          <div class="ear left"></div>
+          <div class="ear right"></div>
+          <div class="wing left"></div>
+          <div class="wing right"></div>
+          <div class="css-monkey"></div>
+        </div>
       </div>
     </div>
 
@@ -157,7 +181,7 @@
    
       <h2>My GitHub</h2>
       <p>Check out my projects: 
-        <a href="https://github.com/[your-username]" target="_blank">[Your Username]</a>
+        <a href="https://github.com[your-username]" target="_blank">[Your Username]</a>
       </p>
     </div>
 
