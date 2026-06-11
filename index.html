@@ -5,155 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michael Eshak's Website</title>
     <style>
-      /* Bikini Bottom Sky and Flower Clouds Background */
+      /* Fullscreen GIF Wallpaper Configuration */
       body { 
         font-family: Arial, sans-serif; 
-        max-width: 1100px;
+        max-width: 800px; /* Reduced to look better as a single column layout */
         margin: 0 auto; 
-        padding: 20px; 
+        padding: 40px 20px; 
         
-        /* Bikini Bottom Undersea Light Blue/Teal Backdrop */
-        background-color: #3ca9e2;
-        background-image: 
-          /* Flower Cloud 1 */
-          radial-gradient(circle at 20% 20%, rgba(133, 222, 117, 0.4) 0px, rgba(133, 222, 117, 0.4) 30px, transparent 31px),
-          radial-gradient(circle at 24% 16%, rgba(133, 222, 117, 0.4) 0px, rgba(133, 222, 117, 0.4) 25px, transparent 26px),
-          radial-gradient(circle at 25% 24%, rgba(133, 222, 117, 0.4) 0px, rgba(133, 222, 117, 0.4) 25px, transparent 26px),
-          radial-gradient(circle at 16% 23%, rgba(133, 222, 117, 0.4) 0px, rgba(133, 222, 117, 0.4) 25px, transparent 26px),
-          radial-gradient(circle at 17% 15%, rgba(133, 222, 117, 0.4) 0px, rgba(133, 222, 117, 0.4) 25px, transparent 26px),
-          /* Flower Cloud 2 */
-          radial-gradient(circle at 75% 65%, rgba(245, 154, 219, 0.4) 0px, rgba(245, 154, 219, 0.4) 40px, transparent 41px),
-          radial-gradient(circle at 80% 60%, rgba(245, 154, 219, 0.4) 0px, rgba(245, 154, 219, 0.4) 30px, transparent 31px),
-          radial-gradient(circle at 81% 70%, rgba(245, 154, 219, 0.4) 0px, rgba(245, 154, 219, 0.4) 30px, transparent 31px),
-          radial-gradient(circle at 70% 70%, rgba(245, 154, 219, 0.4) 0px, rgba(245, 154, 219, 0.4) 30px, transparent 31px),
-          radial-gradient(circle at 69% 60%, rgba(245, 154, 219, 0.4) 0px, rgba(245, 154, 219, 0.4) 30px, transparent 31px);
+        /* IShowSpeed GIF Wallpaper */
+        background-image: url('https://tenor.com');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         background-attachment: fixed;
         
         display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 30px;
+        align-items: center;
+        justify-content: center;
         min-height: 100vh;
         box-sizing: border-box;
         overflow-x: hidden;
       }
-
-      /* --- BACKGROUND CELESTIAL PLANET (STAR OF DAVID) --- */
-      .star-planet-container {
-        position: fixed;
-        top: 15%;
-        right: 10%;
-        width: 250px;
-        height: 250px;
-        z-index: 1;
-        pointer-events: none;
-        animation: planetFloat 6s ease-in-out infinite;
-      }
-
-      /* Outer glowing planetary atmosphere sphere */
-      .planet-sphere {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(circle at 30% 30%, #4a90e2, #102a45 70%, #050b14);
-        border-radius: 50%;
-        box-shadow: 0 0 40px rgba(74, 144, 226, 0.6), inset -20px -20px 50px rgba(0,0,0,0.8);
-        opacity: 0.85;
-      }
-
-      /* Star of David overlay on the planet face */
-      .star-of-david {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 140px;
-        height: 140px;
-        color: #ffd700; /* Glowing Gold Star */
-        font-size: 140px;
-        line-height: 140px;
-        text-align: center;
-        text-shadow: 0 0 25px rgba(255, 215, 0, 0.9);
-        font-family: serif;
-      }
-      
-      /* --- LEFT COLUMN: DONALD TRUMP CONTAINER --- */
-      .left-column-container {
-        position: sticky;
-        top: 40px; 
-        width: 260px;
-        flex-shrink: 0;
-        z-index: 2;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .trump-media-asset {
-        width: 100%;
-        height: auto;
-        filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
-      }
       
       /* --- MAIN BIO CONTENT CARD --- */
       .content-wrapper {
-        flex-grow: 1;
+        width: 100%;
         position: relative;
         z-index: 2;
         background: rgba(255, 255, 255, 0.95); /* Clean white background card for text legibility */
-        padding: 30px;
+        padding: 40px;
         border-radius: 12px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        margin-top: 20px;
         border: 4px solid #1F4E79; 
       }
       
       h1   { color: #1F4E79; margin-top: 0; }
-      h2   { color: #2E75B6; border-bottom: 2px solid #2E75B6; }
+      h2   { color: #2E75B6; border-bottom: 2px solid #2E75B6; padding-bottom: 5px; }
       p    { line-height: 1.6; color: #222; }
-
-      /* Planet floating animation */
-      @keyframes planetFloat {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-15px); }
-      }
-
-      /* Responsive layout tweaks for smaller phone devices */
-      @media (max-width: 850px) {
-        body {
-          flex-direction: column;
-          align-items: center;
-        }
-        .left-column-container {
-          position: static;
-          width: 200px;
-          margin-bottom: 10px;
-        }
-        .star-planet-container {
-          width: 150px;
-          height: 150px;
-          right: 5%;
-          top: 5%;
-        }
-        .star-of-david {
-          font-size: 80px;
-          line-height: 80px;
-        }
-      }
     </style>
   </head>
   <body>
-
-    /* Planet background element */
-    <div class="star-planet-container">
-      <div class="planet-sphere"></div>
-      <div class="star-of-david">✡</div>
-    </div>
-
-    <!-- Left Column Content Frame (Donald Trump Location) -->
-    <div class="left-column-container">
-      <img class="trump-media-asset" src="https://rawpixel.com" alt="Donald Trump Left Profile Asset">
-    </div>
 
     <!-- Main Profile Text Elements Box -->
     <div class="content-wrapper">
@@ -163,7 +54,7 @@
       <p>I'm interested in history/social studies and have interest in joining the military when I finish college.</p>
    
       <h2>My Interests</h2>
-      <p>I enjoy to play soccer and hang out with my friends. Depending on what day it is, I also like to stay home and play video games.</p>
+      <p>I enjoy to play soccer and hang out with friends. Depending on what day it is, I also like to stay home and play video games.</p>
    
       <h2>My Goals for This Course</h2>
       <p>I want to build a website that allows college graduates with a degree to enter their qualifications into a small box and be given a list of jobs or possible future careers to apply for.</p>
